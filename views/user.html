@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>租户控制台</title>
+		<meta name="author" content="WLL">
+		<% include ./components/scriptCSS.html %>
+		<% include ./components/scriptJS.html %>
+		<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<!-- The fav icon -->
+		<link rel="shortcut icon" href="../img/favicon.ico">
+	</head>
+
+	<body>
+		<% include ./components/topBar.html %>
+		<div class="ch-container">
+			<div class="row">
+				<% include ./components/leftMenu.html %>
+				<% include ./components/noScript.html %>
+				<div id="content" class="col-lg-10 col-sm-10">
+					<!-- content starts -->
+					<div>
+						<ul class="breadcrumb">
+							<li>
+								<a href="index">主页</a>
+							</li>
+							<li>
+								<a href="#">个人信息管理</a>
+							</li>
+							<li>
+								<a href="user">账号管理</a>
+							</li>
+						</ul>
+					</div>
+					<div class=" row">
+						<!--span-->
+						<div class="box col-md-4">
+							<div class="box-inner homepage-box">
+								<div class="box-header well" data-original-title="">
+									<h2><i class="glyphicon glyphicon-list-alt"></i> 账号信息</h2>
+
+									<div class="box-icon">
+										<a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
+										<a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</div>
+								<div class="box-content">
+									<form class="form-horizontal">
+										<fieldset>
+											<div class="form-group">
+												<label class="col-lg-3 col-sm-4 control-label">姓名：</label>
+												<div class="col-lg-8 col-sm-8">
+													<p class="form-control-static">WLL</p>
+												</div>
+											</div>
+										</fieldset>
+										<fieldset>
+											<div class="form-group">
+												<label class="col-lg-3 col-sm-4 control-label">昵称：</label>
+												<div class="col-lg-8 col-sm-8">
+													<p class="form-control-static">天地炫舞</p>
+												</div>
+											</div>
+										</fieldset>
+										<fieldset>
+											<div class="form-group">
+												<label class="col-lg-3 col-sm-4 control-label">账号：</label>
+												<div class="col-lg-8 col-sm-8">
+													<p class="form-control-static">13618647578</p>
+												</div>
+											</div>
+										</fieldset>
+										<div class="form-group has-success col-md-12">
+											<a href="#" class="col-md-12 btn btn-info btn-setting_info">点击修改</a>
+										</div>
+									</form>
+									<!--下面的div是弹框  -->
+									<div class="modal fade" id="myModal_info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">×</button>
+													<h3>账号信息修改：</h3>
+												</div>
+												<div class="modal-body" style="height: 250px;">
+													<form class="">
+														<div class="form-group has-success col-md-12">
+															<label class="control-label" for="inputWarning1">姓名：</label>
+															<input type="text" value="未填写" class="form-control" id="">
+														</div>
+														<div class="form-group has-success col-md-12">
+															<label class="control-label" for="inputWarning2">昵称：</label>
+															<input type="text" value="未填写" class="form-control" id="">
+														</div>
+														<div class="form-group has-success col-md-12">
+															<label class="control-label" for="inputWarning3">账号：</label>
+															<input type="text" value="未填写" class="form-control" id="">
+														</div>
+													</form>
+												</div>
+												<div class="modal-footer">
+													<a href="#" class="btn btn-default" data-dismiss="modal">取消</a>
+													<a href="#" class="btn btn-primary" data-dismiss="modal">保存</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+						<!--span-->
+						<div class="box col-md-4">
+							<div class="box-inner homepage-box">
+								<div class="box-header well" data-original-title="">
+									<h2><i class="glyphicon glyphicon-list-alt"></i> 账号权限</h2>
+
+									<div class="box-icon">
+										<a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
+										<a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</div>
+								<div class="box-content">
+									<form class="form-horizontal">
+										<fieldset>
+											<div class="form-group">
+												<label class="col-lg-3 col-sm-4 control-label">身份：</label>
+												<div class="col-lg-8 col-sm-8">
+													<p class="form-control-static">管理员</p>
+												</div>
+											</div>
+										</fieldset>
+										<fieldset>
+											<div class="form-group">
+												<label class="col-lg-3 col-sm-4 control-label">权限：</label>
+												<div class="col-lg-8 col-sm-8">
+													<p class="form-control-static">所有权限</p>
+												</div>
+											</div>
+										</fieldset>
+										<fieldset>
+											<div class="form-group">
+												<label class="col-lg-3 col-sm-4 control-label">部门：</label>
+												<div class="col-lg-8 col-sm-8">
+													<p class="form-control-static">根部门</p>
+												</div>
+											</div>
+										</fieldset>
+										<div class="form-group has-success col-md-12">
+											<a href="#" class="col-md-12 btn btn-info btn-setting_permi">点击修改</a>
+										</div>
+									</form>
+									<!--下面的div是弹框  -->
+									<div class="modal fade" id="myModal_permi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">×</button>
+													<h3>账号权限修改：</h3>
+												</div>
+												<div class="modal-body" style="height: 250px;">
+													<form class="">
+														<div class="form-group has-success col-md-12">
+															<label class="control-label" for="inputWarning1">身份：</label>
+															<input type="text" value="未填写" class="form-control" id="">
+														</div>
+														<div class="form-group has-success col-md-12">
+															<label class="control-label" for="inputWarning2">权限：</label>
+															<input type="text" value="未填写" class="form-control" id="">
+														</div>
+														<div class="form-group has-success col-md-12">
+															<label class="control-label" for="inputWarning3">部门：</label>
+															<input type="text" value="未填写" class="form-control" id="">
+														</div>
+													</form>
+												</div>
+												<div class="modal-footer">
+													<a href="#" class="btn btn-default" data-dismiss="modal">取消</a>
+													<a href="#" class="btn btn-primary" data-dismiss="modal">保存</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+						<!--span-->
+						<div class="box col-md-4">
+							<div class="box-inner homepage-box">
+								<div class="box-header well" data-original-title="">
+									<h2><i class="glyphicon glyphicon-list-alt"></i> 第三方登录方式</h2>
+
+									<div class="box-icon">
+										<a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
+										<a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</div>
+								<div class="box-content">
+									<form class="form-horizontal">
+										<fieldset>
+											<div class="form-group">
+												<label class="col-lg-3 col-sm-4 control-label">QQ：</label>
+												<div class="col-lg-8 col-sm-8">
+													<p class="form-control-static">1941976174</p>
+												</div>
+											</div>
+										</fieldset>
+										<fieldset>
+											<div class="form-group">
+												<label class="col-lg-3 col-sm-4 control-label">微信：</label>
+												<div class="col-lg-8 col-sm-8">
+													<p class="form-control-static">未填写</p>
+												</div>
+											</div>
+										</fieldset>
+										<fieldset>
+											<div class="form-group">
+												<label class="col-lg-3 col-sm-4 control-label">微博：</label>
+												<div class="col-lg-8 col-sm-8">
+													<p class="form-control-static">未填写</p>
+												</div>
+											</div>
+										</fieldset>
+										<div class="form-group has-success col-md-12">
+											<a href="#" class="col-md-12 btn btn-info btn-setting_third">点击修改</a>
+										</div>
+									</form>
+									<!--下面的div是弹框  -->
+									<div class="modal fade" id="myModal_third" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">×</button>
+													<h3>第三方登录方式修改：</h3>
+												</div>
+												<div class="modal-body" style="height: 250px;">
+													<form class="">
+														<div class="form-group has-success col-md-12">
+															<label class="control-label" for="inputWarning1">QQ：</label>
+															<input type="text" value="未填写" class="form-control" id="">
+														</div>
+														<div class="form-group has-success col-md-12">
+															<label class="control-label" for="inputWarning2">微信：</label>
+															<input type="text" value="未填写" class="form-control" id="">
+														</div>
+														<div class="form-group has-success col-md-12">
+															<label class="control-label" for="inputWarning3">微博：</label>
+															<input type="text" value="未填写" class="form-control" id="">
+														</div>
+													</form>
+												</div>
+												<div class="modal-footer">
+													<a href="#" class="btn btn-default" data-dismiss="modal">取消</a>
+													<a href="#" class="btn btn-primary" data-dismiss="modal">保存</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+					<!-- /content ends -->
+				</div>
+				<!--/content.col-md-0-->
+			</div>
+			<!--/fluid-row-->
+			<hr>
+			<% include ./components/footer.html %>
+		</div>
+		<!--/fluid-container-->
+	</body>
+
+</html>
