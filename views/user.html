@@ -52,9 +52,9 @@
 									<form class="form-horizontal">
 										<fieldset>
 											<div class="form-group">
-												<label class="col-lg-3 col-sm-4 control-label">姓名：</label>
+												<label class="col-lg-3 col-sm-4 control-label">账号：</label>
 												<div class="col-lg-8 col-sm-8">
-													<p class="form-control-static">WLL</p>
+													<p id="_username" class="form-control-static">默认值</p>
 												</div>
 											</div>
 										</fieldset>
@@ -62,20 +62,20 @@
 											<div class="form-group">
 												<label class="col-lg-3 col-sm-4 control-label">昵称：</label>
 												<div class="col-lg-8 col-sm-8">
-													<p class="form-control-static">天地炫舞</p>
+													<p id="_login_name" class="form-control-static">默认值</p>
 												</div>
 											</div>
 										</fieldset>
 										<fieldset>
 											<div class="form-group">
-												<label class="col-lg-3 col-sm-4 control-label">账号：</label>
+												<label class="col-lg-3 col-sm-4 control-label">邮箱：</label>
 												<div class="col-lg-8 col-sm-8">
-													<p class="form-control-static">13618647578</p>
+													<p id="_email" class="form-control-static">默认值</p>
 												</div>
 											</div>
 										</fieldset>
 										<div class="form-group has-success col-md-12">
-											<a href="#" class="col-md-12 btn btn-info btn-setting_info">点击修改</a>
+											<a href="#" class="col-md-12 btn btn-info btn-setting_info" disabled="disabled">点击修改</a>
 										</div>
 									</form>
 									<!--下面的div是弹框  -->
@@ -89,7 +89,7 @@
 												<div class="modal-body" style="height: 250px;">
 													<form class="">
 														<div class="form-group has-success col-md-12">
-															<label class="control-label" for="inputWarning1">姓名：</label>
+															<label class="control-label" for="inputWarning1">账号：</label>
 															<input type="text" value="未填写" class="form-control" id="">
 														</div>
 														<div class="form-group has-success col-md-12">
@@ -97,7 +97,7 @@
 															<input type="text" value="未填写" class="form-control" id="">
 														</div>
 														<div class="form-group has-success col-md-12">
-															<label class="control-label" for="inputWarning3">账号：</label>
+															<label class="control-label" for="inputWarning3">邮箱：</label>
 															<input type="text" value="未填写" class="form-control" id="">
 														</div>
 													</form>
@@ -151,7 +151,7 @@
 											</div>
 										</fieldset>
 										<div class="form-group has-success col-md-12">
-											<a href="#" class="col-md-12 btn btn-info btn-setting_permi">点击修改</a>
+											<a href="#" class="col-md-12 btn btn-info btn-setting_permi" disabled="disabled">点击修改</a>
 										</div>
 									</form>
 									<!--下面的div是弹框  -->
@@ -206,7 +206,7 @@
 											<div class="form-group">
 												<label class="col-lg-3 col-sm-4 control-label">QQ：</label>
 												<div class="col-lg-8 col-sm-8">
-													<p class="form-control-static">1941976174</p>
+													<p class="form-control-static">默认值</p>
 												</div>
 											</div>
 										</fieldset>
@@ -214,7 +214,7 @@
 											<div class="form-group">
 												<label class="col-lg-3 col-sm-4 control-label">微信：</label>
 												<div class="col-lg-8 col-sm-8">
-													<p class="form-control-static">未填写</p>
+													<p class="form-control-static">默认值</p>
 												</div>
 											</div>
 										</fieldset>
@@ -222,12 +222,12 @@
 											<div class="form-group">
 												<label class="col-lg-3 col-sm-4 control-label">微博：</label>
 												<div class="col-lg-8 col-sm-8">
-													<p class="form-control-static">未填写</p>
+													<p class="form-control-static">默认值</p>
 												</div>
 											</div>
 										</fieldset>
 										<div class="form-group has-success col-md-12">
-											<a href="#" class="col-md-12 btn btn-info btn-setting_third">点击修改</a>
+											<a href="#" class="col-md-12 btn btn-info btn-setting_third" disabled="disabled">点击修改</a>
 										</div>
 									</form>
 									<!--下面的div是弹框  -->
@@ -266,15 +266,24 @@
 						</div>
 						<!--/span-->
 					</div>
-					<!-- /content ends -->
 				</div>
-				<!--/content.col-md-0-->
 			</div>
-			<!--/fluid-row-->
 			<hr>
 			<% include ./components/footer.html %>
 		</div>
-		<!--/fluid-container-->
+		<script type="text/javascript">
+	       $(function(){
+	    		var userAllInfo=$.session.get("loginUserAllInfo_tm");
+		   		var userAllInfoJson=$.parseJSON(userAllInfo);
+		        var user=userAllInfoJson["user"];
+		        var login_name=user["login_name"];
+		        var username=user["username"];
+	    		var email=user["email"];
+	    		$("#_login_name").html(login_name);
+	    		$("#_username").html(username);
+	    		$("#_email").html(email);
+			});
+	    </script>
 	</body>
 
 </html>

@@ -6,7 +6,7 @@
 		<!-- user dropdown starts -->
 		<div class="btn-group pull-right">
 			<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs">管理员</span>
+                    <i class="glyphicon glyphicon-user"></i>欢迎您，<span class="hidden-sm hidden-xs" id="login_name">默认值</span>
                     <span class="caret"></span>
                 </button>
 			<ul class="dropdown-menu">
@@ -53,4 +53,27 @@
 
 	</div>
 </div>
+	<div id="messageTitle" style="position: absolute; z-index: 99;text-align:center;width: 80%;" class="animated bounceInDown">
+		<p v-if="show" style="background-color: #FF1111;">登录超时，请重新登录</p>
+	</div>
+<script type="text/javascript">
+       $(function(){
+	       	/**
+	       	 * $.parseJSON(str);//字符串转对象
+	       	 * JSON.stringify(obj);//对象转字符串
+	       	 */
+	   		var userAllInfo=$.session.get("loginUserAllInfo_tm");
+	   		if (typeof(userAllInfo) == "undefined" ) {
+	   			window.location.href = '/login';
+	   		}
+	   		new Vue({
+   				el:"#messageTitle",
+   				data:{show:false}
+   			});
+	   		var userAllInfoJson=$.parseJSON(userAllInfo);
+	        var user=userAllInfoJson["user"];//返回的还是一个json对象
+	        var login_name=user["login_name"];
+	        $("#login_name").html(login_name);
+       });
+    </script>
 <!-- topbar ends -->
