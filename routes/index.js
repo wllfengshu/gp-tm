@@ -34,14 +34,6 @@ router.get('/roleInfo', function(req, res, next) {
   res.render('roleInfo');
 });
 
-router.get('/orderModel', function(req, res, next) {
-  res.render('orderModel');
-});
-
-router.get('/orderRecord', function(req, res, next) {
-  res.render('orderRecord');
-});
-
 router.get('/reportOut', function(req, res, next) {
   res.render('reportOut');
 });
@@ -60,10 +52,6 @@ router.get('/callOut', function(req, res, next) {
 
 router.get('/callIn', function(req, res, next) {
   res.render('callIn');
-});
-
-router.get('/qcModel', function(req, res, next) {
-  res.render('qcModel');
 });
 
 router.get('/qcRecord', function(req, res, next) {
