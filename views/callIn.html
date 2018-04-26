@@ -77,14 +77,8 @@
 											<a class="btn btn-success" href="#">
 												<i class="glyphicon glyphicon-zoom-in icon-white"></i> 查看
 											</a>
-											<a class="btn btn-info" href="#">
-												<i class="glyphicon glyphicon-edit icon-white"></i> 编辑
-											</a>
 											<a class="btn btn-danger" href="#">
 												<i class="glyphicon glyphicon-trash icon-white"></i> 删除
-											</a>
-											<a class="btn btn-danger" href="#">
-												<i class="glyphicon glyphicon-align-justify icon-white"></i> 重置密码
 											</a>
 										</td>
 									</tr>
@@ -125,10 +119,11 @@
 	       		}
 		        $("#queryBut").click(function(){
 			    	var params ={
-		    			_ani: $("#_ani").val(),
-		    			_dnis: $("#_dnis").val(),
+			    		domain:"",
+		    			ani: $("#_ani").val(),
+		    			dnis: $("#_dnis").val(),
 		    			pageNo:1,
-		    			pageSize:99,
+		    			pageSize:10,
 		    			token:"tm"
 		    		};
 		    		var paramsGetStr="?"+spliceGetStr(params);

@@ -79,9 +79,6 @@
 											<a class="btn btn-success" href="#">
 												<i class="glyphicon glyphicon-zoom-in icon-white"></i> 查看
 											</a>
-											<a class="btn btn-info" href="#">
-												<i class="glyphicon glyphicon-edit icon-white"></i> 编辑
-											</a>
 											<a class="btn btn-danger" href="#">
 												<i class="glyphicon glyphicon-trash icon-white"></i> 删除
 											</a>
@@ -127,7 +124,7 @@
 		    			ani: $("#_ani").val(),
 		    			dnis: $("#_dnis").val(),
 		    			pageNo:1,
-		    			pageSize:99,
+		    			pageSize:10,
 		    			token:"tm"
 		    		};
 		    		var paramsGetStr="?"+spliceGetStr(params);
@@ -136,9 +133,11 @@
 			        var sessionId=userAllInfoJson["id"];//返回的还是一个json对象
 			        var user=userAllInfoJson["user"];
 			        var user_id=user["id"];
+			        var tenant_id=user["tenant_id"];
 		    		var _headers= {
 						"sessionId":sessionId,
 						"user_id":user_id,
+						"tenant_id":tenant_id
 					}
 			    	$.ajax({
 					    url:'http://localhost:7005/qc/record'+paramsGetStr,
