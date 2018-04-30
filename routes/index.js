@@ -42,10 +42,6 @@ router.get('/reportIn', function(req, res, next) {
   res.render('reportIn');
 });
 
-router.get('/reportQc', function(req, res, next) {
-  res.render('reportQc');
-});
-
 router.get('/callOut', function(req, res, next) {
   res.render('callOut');
 });
