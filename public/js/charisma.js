@@ -301,10 +301,10 @@ function docReady() {
         $('#myModal_addRole').modal('show');
     });
     
-    $('.btn-setting_addUser').click(function (e) {//用户管理-- 添加用户
-        e.preventDefault();
-        $('#myModal_addUser').modal('show');
-    });
+//  $('.btn-setting_addUser').click(function (e) {//用户管理-- 添加用户
+//      e.preventDefault();
+//      $('#myModal_addUser').modal('show');
+//  });
     
 	$('.btn-setting_info').click(function (e) {//账号管理-- 账号信息
         e.preventDefault();
