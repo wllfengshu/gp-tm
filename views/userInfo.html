@@ -298,6 +298,7 @@
 							    success: function(data){
 							    	alert("添加成功");
 							        $(".form-control").val("");//清空输入框
+//							        _self.todos = _self.todos;
 							    },
 							    error: function(res){
 							    	alert("添加失败");
@@ -312,8 +313,9 @@
 							var _itemId=this.getItemId(_self,index);
 				    		//从session中获取数据，拼接到header中
 				    		var _headers=this.getDataBySession();
+//				    		_headers["user_id"]=_itemId;
 				    		$.ajax({
-							    url:'http://localhost:9001/security/user/'+_itemId,
+							    url:'http://localhost:9001/security/user/back/'+_itemId,
 							    type:'get',
 							    dataType:'text',
 							    headers:_headers,
@@ -350,6 +352,13 @@
 							    success: function(_data){
 							    	alert("删除成功");
 							    	_self.todos.splice(index,1);//第一个参数是下标，第二个参数是删除的数量 
+							    	//取删除之前的数据条数，再减一更新上去
+							    	var oldCount=$("#count").text();
+							    	var oldCountPage=$("#countPage").text();
+							    	var oldCountInt=parseInt(oldCount)-1;
+							    	var oldCountPageInt=parseInt(oldCountPage)-1;
+							    	$("#count").html(oldCountInt);
+						    		$("#countPage").html(oldCountPageInt);
 							    },
 							    error: function(res){
 					            	alert("删除失败");
